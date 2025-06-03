@@ -1,5 +1,5 @@
 module mux4to1 (a,sel,y);
-  input   [3:0] d;
+  input   [3:0] a;
   input [1:0] sel;
     output reg y;
 always @(*) 
