@@ -1,5 +1,5 @@
 module mux4to1_tb();
-  reg  [3:0] a;
+reg  [3:0] a;
 reg  [1:0] sel;
 wire y;
   mux4to1 uut (a,sel,y);
@@ -16,3 +16,4 @@ initial
     $finish;
 end
 endmodule
+
