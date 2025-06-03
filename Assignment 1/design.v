@@ -1,10 +1,16 @@
 module mux4to1 (a,sel,y);
-  input [3:0] a;    
-  input [1:0] sel; 
-    output y;     
-assign y = (sel == 2'b00) ? d[0] :
-           (sel == 2'b01) ? d[1] :
-           (sel == 2'b10) ? d[2] :
-                           d[3];
+  input   [3:0] d;
+  input [1:0] sel;
+    output reg y;
+always @(*) 
+  begin
+    case (sel)
+        2'b00: y = a[0];
+        2'b01: y = a[1];
+        2'b10: y = a[2];
+        2'b11: y = a[3];
+        default: y = 1'b0;
+    endcase
+end
 endmodule
 
